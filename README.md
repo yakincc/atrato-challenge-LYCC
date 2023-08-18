@@ -33,7 +33,7 @@ Once the venv is set, I created a new folder named "app", which will be where th
 ```
 mkdir app
 ```
-Which is Window's command to create a directort. Now the structure of the project folder looks like this, but this will be modifyied as we go on with the challenge:
+Which is Window's command to create a directort. Now the structure of the project folder looks like this, but this will be modified as we go on with the challenge:
 ```
 atrato-challenge-LYCC/
 ├── Pipfile
