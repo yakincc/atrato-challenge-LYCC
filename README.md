@@ -25,7 +25,7 @@ This action activates the virtual environment within the terminal, ensuring that
 
 Let's install FastAPI 's 0.99.1 version, which will be used in the next challenges. To do so, I ran the next command:
 ```
-pip install fastapi==0.99.1
+pipenv install fastapi==0.99.1
 ```
 With this, the venv is all set, and we can verify that the FastAPI library is installed by checking the [Pipfile/](Pipfile/). Now, this file says that uvicorn and pandas are installed as well, but those packages will be installed later in this same challenge.
 
@@ -42,8 +42,26 @@ atrato-challenge-LYCC/
 ```
 
 ### Challenge 2: Python Basics.
+For the next part of the challenge, I was required to create a script named [test.py](app/test.py), which uses basic Python and the pandas library. Given a list of students' names and IDs, this script generates 3 randomn notes for every student and calculates the average of the notes, storing the results in a pandas DataFrame.
+
+To begin with, once the test.py file was created inside the app folder, I installed the pandas library in the venv that I created before. To do this, ensuring the venv is already active, I ran the command:
+```
+pipenv install pandas==1.5.2
+```
+This installs the pandas package in the virtual environment created by pipenv, as shown in the [Pipfile](Pipfile). Once the venv was set, I wrote the script in the file [test.py](app/test.py). This script has 4 functions, each one performing a diferent task. 
+* The `generate_random_list` function generates a list of random integer numbers between 1 and 10 using random library. This will help to create the random notes for each students.
+* The `create_dataframe` function takes the students' names and IDs as input, generates 3 random notes for each student, and then creates a pandas.DataFrame object from the data.
+* The `calculate_average` function takes the pandas.DataFrame created by the previous function, calculates the average of every student's notes and appends a new column to the dataframe named 'avg'.
+* Finally, the `test` function describes the global algorithm of how the script should be executed, providing the students' names and their ids, creating the dataframe and then calculating the averages.
+
+By executing the script, I get the following terminal output:
+<img width="248" alt="image" src="https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/490535c5-1975-4a80-8e92-f1f75ee1af87">
+
+Which shows that this stage of the challenge has been completed successfully. 
 
 ### Challenge 3: FastAPI. 
+
+
 
 ### Bonus Challenge: Dockerize the API.
 
