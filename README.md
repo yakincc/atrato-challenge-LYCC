@@ -105,9 +105,43 @@ Which once sent to the API, will now retrieve the following response:
 This shows that the API works in the localhost. Now I'll fire up a Docker container with the API, so it works in any computer withot worrying about the packages.
 
 ### Bonus Challenge: Dockerize the API.
-To dockerize the API app, I was already given the [Dockerfile](Dockerfile), which sontains a description of each of the sections.
+To dockerize the API app, I was already given the [Dockerfile](Dockerfile), which contains a description of each of it's sections. I made slight modifications so I could fire the container from my own computer.
 
+1. The first section is important, since it specifies the base image of the app. In this case I used python 3.8.10 as base image.
+```
+FROM python:3.8.10-slim
+```
+2. The second section of the code sets the working directory within the container to /app/. This means that any subsequent commands or operations will be executed relative to this directory.
+```
+WORKDIR /app/
+```
+3. The third section of the Dockerfile will update the index of the packages available to install and their versions, as well as cleaning temporary files and downloads that may exist in the system after the installation of the corresponding packages.
+```
+RUN apt-get update \
+    && apt-get clean
+```
+4. The fourth section first updates pip, so we can install the required packages. Next, we copy the Pipfile and Pipfile.lock from the current Work Directory (./), and finally install `pipenv` using `pip install pipenv` as well as installing the required dependencies using `pipenv`
+```
+RUN pip install --upgrade pip
+COPY Pipfile Pipfile.lock ./
+RUN pip install pipenv && pipenv install --dev --system --deploy
+```
+5. The fifth section copies all the contents from the root directory to the current work directory within the container, so they can be accesed when executing the next section.
+```
+COPY . .
+```
+6. Finally, the sixth section defines the default command that will be executed when the container starts. This command will run the FastAPI app from the container.
 
+Once the Dockerfile is set, we need to build the docker image. To do so, I ran the following command:
+```
+docker build -t myimage .
+```
 
+And then, ran the image by using the command:
+```
+docker run -p 8000:8000 myimage
+```
+
+Now I can use Postman to make the same requests as in Challenge 3, but with the difference that the API now runs from the container.
 
 ### SQL Questions.
