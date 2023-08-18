@@ -55,9 +55,12 @@ This installs the pandas package in the virtual environment created by pipenv, a
 * Finally, the `test` function describes the global algorithm of how the script should be executed, providing the students' names and their ids, creating the dataframe and then calculating the averages.
 
 By executing the script, I get the following terminal output:
-<img width="248" alt="image" src="https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/490535c5-1975-4a80-8e92-f1f75ee1af87">
 
-Which shows that this stage of the challenge has been completed successfully. 
+<picture>
+<img width="500" alt="image" src="https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/490535c5-1975-4a80-8e92-f1f75ee1af87">
+<\picture>
+
+Which shows that this stage of the challenge has been completed successfully. Notice that since the notes1, notes2 and notes3 columns are generated randomly, each execution of the code may lead to different results.
 
 ### Challenge 3: FastAPI. 
 
