@@ -147,9 +147,7 @@ Now I can use Postman to make the same requests as in Challenge 3, but with the 
 ### SQL Questions.
 For the final part of the challenge I was given the following database schema and asked to write the queries for the next questions. 
 
-<picture>
-![image](https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/79ec90d1-200f-41a7-b853-974171a6519e)
-</picture>
+![image](https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/0c14db6c-fe56-484d-a9aa-dc5961ca8555)
 
 Here are the questions and the corresponding queries:
 1. All the orders of the customer with the customer_name = ‘Emmanuel’.
