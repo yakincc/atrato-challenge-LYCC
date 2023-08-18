@@ -131,7 +131,9 @@ RUN pip install pipenv && pipenv install --dev --system --deploy
 COPY . .
 ```
 6. Finally, the sixth section defines the default command that will be executed when the container starts. This command will run the FastAPI app from the container.
-
+```
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
 Once the Dockerfile is set, we need to build the docker image. To do so, I ran the following command:
 ```
 docker build -t myimage .
