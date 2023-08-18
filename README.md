@@ -145,3 +145,39 @@ docker run -p 8000:8000 myimage
 Now I can use Postman to make the same requests as in Challenge 3, but with the difference that the API now runs from the container.
 
 ### SQL Questions.
+For the final part of the challenge I was given the following database schema and asked to write the queries for the next questions. 
+
+<picture>
+![image](https://github.com/yakincc/atrato-challenge-LYCC/assets/107595933/79ec90d1-200f-41a7-b853-974171a6519e)
+</picture>
+
+Here are the questions and the corresponding queries:
+1. All the orders of the customer with the customer_name = ‘Emmanuel’.
+```
+SELECT *
+FROM Orders
+INNER JOIN Customers ON Orders.customer_id = Customers.customer_id
+WHERE Customers.customer_name = 'Emmanuel';
+``` 
+
+2. How many orders have the customer with customer_id = 25
+```
+SELECT COUNT(*)
+FROM ORDERS
+WHERE customer_id = 25;
+```
+3. Order by order_date descending, all the orders that have the customer called ‘Luis’.
+```
+SELECT *
+FROM Orders
+INNER JOIN Customers ON Orders.customer_id = Customers.customer_id
+WHERE Customers.customer_name = 'Luis'
+ORDER BY Orders.order_date DESC;
+``` 
+4. How many shipments have by order the customer with customer_id = 10.
+```
+SELECT COUNT(Shipments.shipment_id)
+FROM Shipments
+INNER JOIN Orders ON Shipments.order_id = Orders.order_id
+WHERE Orders.customer_id = 10
+```
