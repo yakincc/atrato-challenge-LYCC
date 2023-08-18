@@ -179,3 +179,4 @@ FROM Shipments
 INNER JOIN Orders ON Shipments.order_id = Orders.order_id
 WHERE Orders.customer_id = 10
 ```
+To test these queries, I wrote a simple Jupyter Notebook, where I created an example database using sqlite3 as shown in [SQL-testing.ipynb](SQL-testing.ipynb). 
